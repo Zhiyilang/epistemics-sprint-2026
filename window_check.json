@@ -1,0 +1,117 @@
+{
+  "checked_at_beijing": "2026-11-14T13:47:06+08:00",
+  "url": "https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15",
+  "http_status": 200,
+  "page_bytes": 719338,
+  "page_sha256": "39cb04c3167bb6d3f90faddf2d5e43a3e9871791b416b45242daf927c3842380",
+  "title": "AI x Epistemics Research Sprint | Apart Research",
+  "readable_chars": 54419,
+  "live_now": true,
+  "submission_form_reachable_by_get": true,
+  "window_open": true,
+  "evidence": {
+    "Live now.": {
+      "found": true,
+      "occurrences": 2,
+      "context": " Sprints / AI x Epistemics Research Sprint Sprints Nov 13 - 15, 2026 · Online AI x Epistemics Research Sprint Live now. Closes Nov 15, 11:59 PM AoE ( Anywhere on Earth (UTC−12) ) Nov 16, 11:59 AM UTC Official Nov 15, 11:59 PM Any"
+    },
+    "Submissions close Sunday, November 15 at 11:59 PM Anywhere on Earth (AoE)": {
+      "found": true,
+      "occurrences": 1,
+      "context": "No prior background in AI safety is required. When: Friday, November 13 to Sunday, November 15, 2026, online. Submissions close Sunday, November 15 at 11:59 PM Anywhere on Earth (AoE). Support from Adaption AI x Epistemics Research Sprint is supported by Adaption. All registered participants "
+    },
+    "$2,000 in cash prizes across all tracks": {
+      "found": true,
+      "occurrences": 1,
+      "context": "gistered participants will receive 1,250 credits plus three months of access to the Builder plan. Cash Prizes $2,000 in cash prizes across all tracks 🥇 1st Place $1,000 🥈 2nd Place $500 🥉 3rd Place $300 🏅 4th Place $100 🏅 5th Place $100 Know someone who’d be "
+    },
+    "Teams of one to five people": {
+      "found": true,
+      "occurrences": 1,
+      "context": "ild the benchmark, tool, product or study that makes progress on it, and write up what you found. The format. Teams of one to five people pick a track, come up with a project, and ship. There is no requirement to have participated before, no requi"
+    },
+    "No prior background in AI safety is required": {
+      "found": true,
+      "occurrences": 1,
+      "context": "ple make. Four tracks, including an open track for the field's bigger meta-questions. The sprint runs online. No prior background in AI safety is required. When: Friday, November 13 to Sunday, November 15, 2026, online. Submissions close Sunday, November 15 at 11:"
+    },
+    "Results and winners are announced about 1 to 2 weeks after the judging deadline": {
+      "found": true,
+      "occurrences": 1,
+      "context": "fety or epistemics background is required. The Resources tab has a reading list per track. What happens after Results and winners are announced about 1 to 2 weeks after the judging deadline. Top teams are invited to apply to the Apart Fellowship for continued mentorship, funding, and publication su"
+    },
+    "Friday, November 13": {
+      "found": true,
+      "occurrences": 2,
+      "context": "he field's bigger meta-questions. The sprint runs online. No prior background in AI safety is required. When: Friday, November 13 to Sunday, November 15, 2026, online. Submissions close Sunday, November 15 at 11:59 PM Anywhere on Earth (Ao"
+    },
+    "Sunday, November 15": {
+      "found": true,
+      "occurrences": 3,
+      "context": "questions. The sprint runs online. No prior background in AI safety is required. When: Friday, November 13 to Sunday, November 15, 2026, online. Submissions close Sunday, November 15 at 11:59 PM Anywhere on Earth (AoE). Support from Adapti"
+    },
+    "Trust Infrastructure": {
+      "found": true,
+      "occurrences": 4,
+      "context": "es No Tracks Choose every track your project fits. Track 1: Model Epistemics & Decision-Making Evals Track 2: Trust Infrastructure Track 3: Epistemic Products Track 4: Open Track (deployment, adoption and impact) Presentation recording Proj"
+    },
+    "Epistemic Products": {
+      "found": true,
+      "occurrences": 4,
+      "context": "k your project fits. Track 1: Model Epistemics & Decision-Making Evals Track 2: Trust Infrastructure Track 3: Epistemic Products Track 4: Open Track (deployment, adoption and impact) Presentation recording Project code Slides PDF, PowerPo"
+    },
+    "Submit your project": {
+      "found": true,
+      "occurrences": 3,
+      "context": "here on Earth is the last time zone to finish a day: if it’s still Nov 15 somewhere on Earth, you’re on time. Submit your project Submit your project × Uploading files needs JavaScript. Turn it on to send this form. Project details Project"
+    }
+  },
+  "form_markers": {
+    "PDF File": {
+      "in_page": true,
+      "raw_hits": 2
+    },
+    "ProjectTitle_Framer": {
+      "in_page": true,
+      "raw_hits": 4
+    },
+    "ProjectSummary_Framer": {
+      "in_page": true,
+      "raw_hits": 6
+    },
+    "Tracks": {
+      "in_page": true,
+      "raw_hits": 14
+    },
+    "$ACTION_KEY": {
+      "in_page": true,
+      "raw_hits": 5
+    },
+    "project-submission": {
+      "in_page": true,
+      "raw_hits": 3
+    },
+    "success-submission": {
+      "in_page": true,
+      "raw_hits": 1
+    }
+  },
+  "exclusion_term_counts": {
+    "not eligible": 0,
+    "excluding": 0,
+    "residents of": 0,
+    "must be 18": 0,
+    "18 years of age": 0,
+    "country restrictions": 0
+  },
+  "dollar_amounts_on_page": [
+    "$1,000",
+    "$100",
+    "$2",
+    "$2,000",
+    "$300",
+    "$500"
+  ],
+  "post_count": 0,
+  "note": "Pure GET only. No POST, no sign-up, no PDF upload, no submission. Verdicts are recorded as found/not found; a missing phrase is not filled in from memory."
+}
