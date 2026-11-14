@@ -1,0 +1,59 @@
+{
+  "url": "https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15",
+  "http_note": "urllib GET, 200 implied by successful read",
+  "page_bytes_utf8": 719338,
+  "form_actions": [
+    "/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#submission-ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15-status",
+    "/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#sign-up-ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15-status",
+    "/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#_R_kmddbsnpfjb_-status",
+    "/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#_R_2ahbsnpfjb_-status",
+    "/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#newsletter-footer-form"
+  ],
+  "submission_actions": [
+    "/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#submission-ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15-status"
+  ],
+  "hidden_fields": {
+    "$ACTION_REF_6": "",
+    "$ACTION_6:0": "{\"id\":\"78b1728745b161fe7efc7c7126493ba5e4e9ce876e\",\"bound\":\"$@1\"}",
+    "$ACTION_6:1": "[\"project-submission\",\"ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15\",{\"status\":\"idle\"}]",
+    "$ACTION_KEY": "p/sprints/ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15#submission-ai-x-epistemics-research-sprint-2026-11-13-to-2026-11-15-status"
+  },
+  "field_names": [
+    "$ACTION_6:0",
+    "$ACTION_6:1",
+    "$ACTION_KEY",
+    "$ACTION_REF_6",
+    "AdditionalLink_Framer",
+    "Code_Framer",
+    "Image_File_Framer",
+    "InterestedInPublishing_Framer",
+    "Location_Framer",
+    "Member1_Discord_Framer",
+    "Member1_Email_Framer",
+    "Member1_Name_Framer",
+    "Member1_Scholar_Framer",
+    "PDF File",
+    "Presentation_Framer",
+    "ProjectSummary_Framer ",
+    "ProjectTitle_Framer",
+    "Slideshow_File_Framer",
+    "TeamName_Framer",
+    "Tracks",
+    "leave_blank"
+  ],
+  "keyword_hits": {
+    "PDF File": 2,
+    "project-submission": 3,
+    "Submit your project": 6,
+    "success-submission": 1,
+    "ProjectTitle_Framer": 4,
+    "ProjectSummary_Framer": 6,
+    "Tracks": 14,
+    "_ref": 4,
+    "$ACTION_KEY": 5,
+    "Live now.": 4,
+    "Submissions close": 4
+  },
+  "post_count": 0,
+  "note": "Pure GET. No POST, no upload token, no PDF upload, no submission."
+}
