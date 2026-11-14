@@ -1,0 +1,3018 @@
+{
+  "meta": {
+    "study": "Anchored hash chains for agent audit logs",
+    "track": "2 - Trust Infrastructure",
+    "generated_at": "2026-11-14T13:30:00+08:00",
+    "sprint_window": "2026-11-13 to 2026-11-15 (work performed 2026-11-14, Beijing)",
+    "python": "3.13.14",
+    "hash": "SHA-256 with domain separator, canonical JSON",
+    "seeds": [
+      0,
+      39
+    ],
+    "trials_per_attack": 40,
+    "records_per_log": 24,
+    "verifiers": [
+      "schema",
+      "per_record",
+      "chain",
+      "anchored"
+    ],
+    "attacks": {
+      "clean": "unmodified control log",
+      "edit_value": "change one claim string, do not recompute any hash",
+      "delete_middle": "remove one middle entry, leave remaining entries untouched",
+      "insert_forged": "insert a forged entry with a correctly computed self-hash",
+      "reorder": "swap two adjacent entries, keeping their contents intact",
+      "truncate_tail": "drop the last three entries, leaving a self-consistent prefix",
+      "reseal_chain": "change one claim, then recompute the entire chain from scratch"
+    },
+    "data_note": "Synthetic logs generated deterministically; not real deployment data."
+  },
+  "matrix": {
+    "clean": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 685.73
+      },
+      "per_record": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1523.16
+      },
+      "chain": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1259.33
+      },
+      "anchored": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1483.41
+      }
+    },
+    "edit_value": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 456.06
+      },
+      "per_record": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1122.52
+      },
+      "chain": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 814.48
+      },
+      "anchored": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1013.74
+      }
+    },
+    "delete_middle": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 553.38
+      },
+      "per_record": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1251.82
+      },
+      "chain": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1038.97
+      },
+      "anchored": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1639.12
+      }
+    },
+    "insert_forged": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 428.39
+      },
+      "per_record": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1347.18
+      },
+      "chain": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1412.56
+      },
+      "anchored": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1188.56
+      }
+    },
+    "reorder": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 524.03
+      },
+      "per_record": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1349.19
+      },
+      "chain": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1246.4
+      },
+      "anchored": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1055.21
+      }
+    },
+    "truncate_tail": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 488.17
+      },
+      "per_record": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1049.79
+      },
+      "chain": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1272.25
+      },
+      "anchored": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1198.92
+      }
+    },
+    "reseal_chain": {
+      "schema": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 535.01
+      },
+      "per_record": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1409.34
+      },
+      "chain": {
+        "detected": 0,
+        "total": 40,
+        "rate": 0.0,
+        "mean_verify_us": 1364.93
+      },
+      "anchored": {
+        "detected": 40,
+        "total": 40,
+        "rate": 1.0,
+        "mean_verify_us": 1250.45
+      }
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 0,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 0,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 0,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 0,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 0,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 0,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 1,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 2,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 3,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 4,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 5,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 6,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 7,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 8,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 9,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 10,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 11,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 12,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 13,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 14,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 15,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 16,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 17,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 18,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 19,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 20,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 21,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 22,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 23,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 24,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 25,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 26,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 27,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 28,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 29,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 30,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 31,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 32,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 33,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 34,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 35,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 36,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 37,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 38,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "clean",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": false
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "edit_value",
+      "detected": {
+        "schema": false,
+        "per_record": true,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "delete_middle",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "insert_forged",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "reorder",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": true,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "truncate_tail",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    },
+    {
+      "seed": 39,
+      "attack": "reseal_chain",
+      "detected": {
+        "schema": false,
+        "per_record": false,
+        "chain": false,
+        "anchored": true
+      }
+    }
+  ]
+}
